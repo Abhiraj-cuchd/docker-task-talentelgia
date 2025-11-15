@@ -2,25 +2,25 @@
 require('dotenv').config();
 
 const express = require('express');
-// const redis = require('redis');
+const redis = require('redis');
 
 const app = express();
 
-// Get Redis host and port from environment variables
-// const redisHost = process.env.REDIS_HOST || 'localhost';
-// const redisPort = process.env.REDIS_PORT || 6379;
+Get Redis host and port from environment variables
+const redisHost = process.env.REDIS_HOST || 'localhost';
+const redisPort = process.env.REDIS_PORT || 6379;
 
-// // Create Redis client
-// const client = redis.createClient({
-//     socket: {
-//         host: redisHost,
-//         port: redisPort
-//     }
-// });
+// Create Redis client
+const client = redis.createClient({
+    socket: {
+        host: redisHost,
+        port: redisPort
+    }
+});
 
-// client.connect()
-//     .then(() => console.log(`Connected to Redis at ${redisHost}:${redisPort}`))
-//     .catch(err => console.error('Redis connection error:', err));
+client.connect()
+    .then(() => console.log(`Connected to Redis at ${redisHost}:${redisPort}`))
+    .catch(err => console.error('Redis connection error:', err));
 
 // Root route
 app.get('/', async (req, res) => {
