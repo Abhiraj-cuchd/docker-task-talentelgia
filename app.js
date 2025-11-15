@@ -6,7 +6,7 @@ const redis = require('redis');
 
 const app = express();
 
-Get Redis host and port from environment variables
+// Get Redis host and port from environment variables
 const redisHost = process.env.REDIS_HOST || 'localhost';
 const redisPort = process.env.REDIS_PORT || 6379;
 
